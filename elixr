@@ -38,3 +38,8 @@ echo "STRATEGY_EXECUTOR_IP_ADDRESS=$ip" >> validator.env
 echo "STRATEGY_EXECUTOR_DISPLAY_NAME=$name" >> validator.env
 echo "STRATEGY_EXECUTOR_BENEFICIARY=$address" >> validator.env
 echo "SIGNER_PRIVATE_KEY=$privatekey" >> validator.env
+
+docker run -it \
+  --env-file $Home/root/elixir-metadata/validator.env \
+  --name elixir \
+  elixirprotocol/validator:v3
